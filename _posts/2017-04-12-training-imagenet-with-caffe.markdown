@@ -58,7 +58,7 @@ In order to train, you need to choose a model first, for example below is AlexNe
 ![AlexNet](/assets/images/alexnet.jpg)
 (Image Source : [Deep Learning with Python-PyData Seattle 2015](https://www.slideshare.net/AlexanderKorbonits/deep-learning-with-python-pydata-seattle-2015))
 
-**Prototxt** is a configuration file that Caffe use for define a networks(models) and optimizers(solver). 
+**Prototxt** is a configuration file that Caffe use to define a networks(models) and optimizers(solver). 
 
 **Models** <br />
 You can refer to `train_val.prototxt` example file under *'caffe/models/bvlc_alexnet/'*.
