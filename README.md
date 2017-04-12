@@ -1,23 +1,16 @@
-#Mr.Brown is a responsive Jekyll theme
-=========================
+## Welcome to my Blog!
 
-![](assets/images/mr.brown.jpg)
+### About Me:
 
-# Demo
-View this jekyll theme in action [here](http://artemsheludko.pw/mr-brown/)
+Kindly visit [my website](http:/sherrylwen.com/) :D
 
-Integrations
-  - [Google Fonts](https://fonts.google.com/)
-  - [Disqus](https://disqus.com/)
-  - [Font Awesome](http://fontawesome.io/)
-  - Social media links
 
-# How to Use
+### Blog Content:
 
-  For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details,
-  or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-  and [creating pages](https://jekyllrb.com/docs/pages/).
+```markdown
+# My experiments and experiences
 
-## License
+# Notion that I found interesting
 
-MIT License
+# My journey 
+
