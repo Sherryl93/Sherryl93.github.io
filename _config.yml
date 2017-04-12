@@ -1,8 +1,8 @@
 title: Sherryl Santoso's Blog
-description: Mr.Brown is a responsive jekyll theme
+#description: Mr.Brown is a responsive jekyll theme
 url: "https://sherryl93.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: ':title/'
-baseurl: "/Sherryl93.github.io" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 
 # Comments
 discus_identifier: mr-brown
