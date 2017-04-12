@@ -60,7 +60,7 @@ In order to train, you need to choose a model first, for example below is AlexNe
 
 **Prototxt** is a configuration file that Caffe use for define a networks(models) and optimizers(solver). 
 
-**Models** 
+**Models** <br />
 You can refer to `train_val.prototxt` example file under *'caffe/models/bvlc_alexnet/'*.
 It looks like below:
 {% highlight bash %}
@@ -149,7 +149,7 @@ layer {
 }
 {% endhighlight %}
 
-BTW, just in case you want to measure `Top-5` accuracy you can add following line to above `train_val.prototxt`:
+**BTW**, just in case you want to measure `Top-5` accuracy you can add following line to above `train_val.prototxt`:
 {% highlight bash %}
 layer{
   name: "accuracy/top5"
@@ -187,23 +187,23 @@ solver_mode: GPU # Change to 'CPU' if you want to use CPU power
 {% endhighlight %}
 
 ### Let's Train!
-**Training from scratch**
+**Training from scratch** <br />
 Run command below under *'caffe'* root.
 {% highlight markdown %}
 > ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
 Note: `--gpu` to choose your gpu id, and `2>&1 | tee output.log` to produce your output report in log file format.
 
-**Resume your training**
+**Resume your training** <br />
 In case your training die halfway (e.g. stop at 60,000 iterations) you can resummon it by:
 {% highlight markdown %}
 > ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --snapshot=models/bvlc_alexnet/caffe_alexnet_train_iter_60000.solverstate --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
 
-**Finetune (train with existing model)**
+**Finetune (train with existing model)** <br />
 For example if you already have model in your hand and you want to refine it:
 {% highlight markdown %}
 > ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --weights=models/bvlc_alexnet/bvlc_caffe_alexnet.caffemodel --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
-
+<br />
 > Phew~~ Congratulations! you just finished train CNN!.
