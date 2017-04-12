@@ -203,7 +203,13 @@ In case your training die halfway (e.g. stop at 60,000 iterations) you can resum
 **Finetune (train with existing model)** <br />
 For example if you already have model in your hand and you want to refine it:
 {% highlight markdown %}
-> ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --weights=models/bvlc_alexnet/bvlc_caffe_alexnet.caffemodel --gpu=0 2>&1 | tee output.log
+> ./build/tools/caffe train --solver=models/bvlc_alexnet/train_val.prototxt --weights=models/bvlc_alexnet/bvlc_caffe_alexnet.caffemodel --gpu=0 2>&1 | tee output.log
+{% endhighlight %}
+
+### Let's test
+To deploy:
+{% highlight markdown %}
+> ./build/tools/caffe test --model=models/bvlc_alexnet/solver.prototxt --weights=models/bvlc_alexnet/caffe_alexnet_train_iter_450000.caffemodel --gpu=0 2>&1 | tee output_test.log
 {% endhighlight %}
 <br />
 > Phew~~ Congratulations! you just finished train CNN!.
