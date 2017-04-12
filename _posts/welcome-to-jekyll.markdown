@@ -3,8 +3,8 @@ layout: post
 title:  "Training CNN with ImageNet and Caffe"
 description: understanding deep learning
 date: 2017-04-12 10:00:25 
-categories: jekyll update
 img: 
+categories: Caffe, CNN, ImageNet
 author: PSS
 ---
 This post is a tutorial to introduce how [`Convolutional Neural Network (CNN)`](http://cs231n.github.io/convolutional-networks/) works using `ImageNet` datasets and `Caffe` framework.
@@ -13,10 +13,11 @@ This post is a tutorial to introduce how [`Convolutional Neural Network (CNN)`](
 
 [`Caffe`](http://caffe.berkeleyvision.org/) is one of the widely used deep learning framework. The performance is quite fast and this framework focuses on Computer Vision area. 
 
-Enough of the pep talks, now lets get started!
+now lets get started!
 
 ## Install Caffe to your system:
-*Assumed you already done the prequisite step for your system, if you haven't go [here](http://caffe.berkeleyvision.org/installation.html)*
+*Assumed you already done the prequisite step for your system, if you haven't go [here](http://caffe.berkeleyvision.org/installation.html).*
+
 **Steps:**
 {% highlight markdown %}
 > git clone https://github.com/BVLC/caffe.git
@@ -28,6 +29,17 @@ Enough of the pep talks, now lets get started!
 > make install
 > make runtest
 {% endhighlight %}
+
+## Data Preparation:
+### 1. Download ImageNet 2012 data
+First, you need to download the ImageNet 2012 Training data from [here](http://image-net.org/challenges/LSVRC/2012/browse-synsets) and put it under *'caffe/data/ilsvrc12/'* root folder.
+Then, download auxilaries, to do this you can use `get_ilsvrc_aux.sh` under *'caffe/data/ilsvrc12/'*  and run:
+{% highlight markdown %}
+> sh get_ilsvrc_aux.sh
+{% endhighlight %}
+Now you have downloaded all data.
+### 2. Convert data to lmdb
+
 
 Jekyll also offers powerful support for code snippets:
 
