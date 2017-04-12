@@ -43,7 +43,7 @@ Now you have downloaded all data.
 ## Training CNN Models:
 ### 1. setting the solver (model)
 **AlexNet** is one of the well-known model that created by Krizhevsky on 2012. 
-![Alt](alexnet.jpg)
+![AlexNet](/assets/images/alexnet.jpg)
 (Image Source : [Deep Learning with Python-PyData Seattle 2015](https://www.slideshare.net/AlexanderKorbonits/deep-learning-with-python-pydata-seattle-2015))
 
 
