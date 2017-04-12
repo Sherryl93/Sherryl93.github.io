@@ -3,7 +3,7 @@ layout: post
 title:  "Training CNN with ImageNet and Caffe"
 description: understanding deep learning
 date: 2017-04-12 10:00:25 
-img: 
+img: collage_s.png
 categories: Caffe, CNN, ImageNet
 author: PSS
 ---
