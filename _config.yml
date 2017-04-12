@@ -1,15 +1,15 @@
-title: Mr.Brown
+title: Sherryl Santoso's Blog
 description: Mr.Brown is a responsive jekyll theme
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sherryl93.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: ':title/'
-baseurl: "/mr-brown" # the subpath of your site, e.g. /blog
+baseurl: "/Sherryl93.github.io" # the subpath of your site, e.g. /blog
 
 # Comments
 discus_identifier: mr-brown
 
 # Social settings
-twitter_url: https://twitter.com/artemsheludko_
+twitter_url: https://twitter.com/Sherryl_93
 facebook_url: https://facebook.com/
 googleplus_url: https://plus.google.com/
 instagram_url: https://instagram.com
-github_url: https://github.com/artemsheludko/
+github_url: https://github.com/Sherryl93/
