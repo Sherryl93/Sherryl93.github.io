@@ -1,15 +1,33 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.
-date: 2017-02-08 14:10:25 +0200
+title:  "Training CNN with ImageNet and Caffe"
+description: understanding deep learning
+date: 2017-04-12 10:00:25 
 categories: jekyll update
-img: jekyll-poster.png
-author: Jekyll
+img: 
+author: PSS
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+This post is a tutorial to introduce how [`Convolutional Neural Network (CNN)`](http://cs231n.github.io/convolutional-networks/) works using `ImageNet` datasets and `Caffe` framework.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+[`ImageNet`](http://www.image-net.org/) is a large-scale hierarchical image database that mainly used by vision related research.
+
+[`Caffe`](http://caffe.berkeleyvision.org/) is one of the widely used deep learning framework. The performance is quite fast and this framework focuses on Computer Vision area. 
+
+Enough of the pep talks, now lets get started!
+
+## Install Caffe to your system:
+*Assumed you already done the prequisite step for your system, if you haven't go [here](http://caffe.berkeleyvision.org/installation.html)*
+**Steps:**
+{% highlight markdown %}
+> git clone https://github.com/BVLC/caffe.git
+> cd caffe
+> mkdir build
+> cd build
+> cmake ..
+> make -j13 or make all
+> make install
+> make runtest
+{% endhighlight %}
 
 Jekyll also offers powerful support for code snippets:
 
