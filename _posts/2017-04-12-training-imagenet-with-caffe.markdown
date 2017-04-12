@@ -16,7 +16,7 @@ This post is a tutorial to introduce how [`Convolutional Neural Network (CNN)`](
 now lets get started!
 
 ## Install Caffe to your system:
-*Assumed you already done the prequisite step for your system, if you haven't go [here](http://caffe.berkeleyvision.org/installation.html).*
+*Assumed you already did the prequisite step for your system, if you haven't go [here](http://caffe.berkeleyvision.org/installation.html).*
 
 **Steps:**
 {% highlight markdown %}
@@ -59,7 +59,8 @@ In order to train, you need to choose a model first, for example below is AlexNe
 (Image Source : [Deep Learning with Python-PyData Seattle 2015](https://www.slideshare.net/AlexanderKorbonits/deep-learning-with-python-pydata-seattle-2015))
 
 **Prototxt** is a configuration file that Caffe use for define a networks(models) and optimizers(solver). 
-**models** 
+
+**Models** 
 You can refer to `train_val.prototxt` example file under *'caffe/models/bvlc_alexnet/'*.
 It looks like below:
 {% highlight bash %}
@@ -100,33 +101,6 @@ layer {
     source: "data/val_lmdb" # path to validation data
     batch_size: 50
     backend: LMDB
-  }
-}
-layer {
-  name: "conv1"
-  type: "Convolution"
-  bottom: "data"
-  top: "conv1"
-  param {
-    lr_mult: 0.01
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 0.01
-    decay_mult: 0
-  }
-  convolution_param {
-    num_output: 96
-    kernel_size: 11
-    stride: 4
-    weight_filler {
-      type: "gaussian"
-      std: 0.01
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
   }
 }
 ...
@@ -192,6 +166,7 @@ layer{
 }
 {% endhighlight %}
 
+
 **Optimizers** : [Doc.](https://github.com/BVLC/caffe/wiki/Solver-Prototxt)
 You can refer to `solver.prototxt` example file under *'caffe/models/bvlc_alexnet/'*.
 {% highlight bash %}
@@ -212,69 +187,23 @@ solver_mode: GPU # Change to 'CPU' if you want to use CPU power
 {% endhighlight %}
 
 ### Let's Train!
-
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-## Headings
-
-Headings by default:
-
-## Heading first level
-### Heading second level
-#### Heading third level
-
+**Training from scratch**
+Run command below under *'caffe'* root.
 {% highlight markdown %}
-## Heading first level
-### Heading second level
-#### Heading third level
+> ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
+Note: `--gpu` to choose your gpu id, and `2>&1 | tee output.log` to produce your output report in log file format.
 
-## Lists
-
-Unordered list example:
-* Unordered list item 1
-* Unordered list item 2
-* Unordered list item 3
-* Unordered list item 4
-
-Ordered list example:
-1. Ordered list item 1
-2. Ordered list item 1
-3. Ordered list item 1
-4. Ordered list item 1
-
+**Resume your training**
+In case your training die halfway (e.g. stop at 60,000 iterations) you can resummon it by:
 {% highlight markdown %}
-* Unordered list item 1
-* Unordered list item 2
-
-1. Order list item 1
-2. Order list item 1
+> ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --snapshot=models/bvlc_alexnet/caffe_alexnet_train_iter_60000.solverstate --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
 
-
-## Quotes
-
-A quote looks like this:
-
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna.
-
+**Finetune (train with existing model)**
+For example if you already have model in your hand and you want to refine it:
 {% highlight markdown %}
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna.
+> ./build/tools/caffe train --solver=models/bvlc_alexnet/solver.prototxt --weights=models/bvlc_alexnet/bvlc_caffe_alexnet.caffemodel --gpu=0 2>&1 | tee output.log
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+> Phew~~ Congratulations! you just finished train CNN!.
