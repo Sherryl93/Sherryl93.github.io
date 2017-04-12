@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Training CNN with ImageNet and Caffe"
-description: understanding deep learning
+description: Understanding Convolutional Neural Networks (deep learning) work using ImageNet and Caffe Framework.
 date: 2017-04-12 10:00:25 
 img: collage_s.png
 categories: Caffe, CNN, ImageNet
@@ -39,6 +39,13 @@ Then, download auxilaries, to do this you can use `get_ilsvrc_aux.sh` under *'ca
 {% endhighlight %}
 Now you have downloaded all data.
 ### 2. Convert data to lmdb
+
+## Training CNN Models:
+### 1. setting the solver (model)
+**AlexNet** is one of the well-known model that created by Krizhevsky on 2012. 
+![Alt](alexnet.jpg)
+(Image Source : [Deep Learning with Python-PyData Seattle 2015](https://www.slideshare.net/AlexanderKorbonits/deep-learning-with-python-pydata-seattle-2015))
+
 
 
 Jekyll also offers powerful support for code snippets:
