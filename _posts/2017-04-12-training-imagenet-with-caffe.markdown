@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Training CNN with ImageNet and Caffe"
-description: Understanding Convolutional Neural Networks (deep learning) work using ImageNet and Caffe Framework.
+description: Understanding Convolutional Neural Networks (deep learning) using ImageNet and Caffe Framework.
 date: 2017-04-12 10:00:25 
 img: collage_s.png
 categories: Caffe, CNN, ImageNet
