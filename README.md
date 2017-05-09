@@ -10,7 +10,7 @@ Kindly visit [my website](http:/sherrylwen.com/) :D
 ```markdown
 # My experiments and experiences
 
-# Notion that I found interesting
+# Notions that I found it interesting
 
-# My journey 
+# My journey :D
 
