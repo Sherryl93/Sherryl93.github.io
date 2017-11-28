@@ -171,7 +171,7 @@ layer{
 You can refer to `solver.prototxt` example file under *'caffe/models/bvlc_alexnet/'*.
 {% highlight bash %}
 net: "models/bvlc_alexnet/train_val.prototxt" # path to your models(network definition)
-test_iter: 1000 # number of test iterations occured per "test_interval"
+test_iter: 1000 # number of test iterations occured per "test_interval" | = (number of data / batch size).
 test_interval: 1000 # how often test phase will be executed 
 base_lr: 0.01 # learning rate
 lr_policy: "step" # means to drop learning rate based on gamma 
